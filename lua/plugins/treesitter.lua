@@ -4,7 +4,6 @@ return {
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
-        "lua",
         "vim",
         "vimdoc",
         "javascript",
@@ -12,7 +11,6 @@ return {
         "typescript",
         "python",
         "bash",
-        "json",
         "html",
         "css",
       },
