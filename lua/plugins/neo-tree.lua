@@ -2,28 +2,28 @@ return {
   "nvim-tree/nvim-tree.lua",
   enabled = false,
   dependencies = {
-    "nvim-tree/nvim-web-devicons", -- Pretty file icons (requires Nerd Font)
+    "nvim-tree/nvim-web-devicons",
   },
   lazy = false,
   config = function()
     require("nvim-tree").setup({
       view = {
-        width = 30, -- Sidebar width in columns
-        side = "left", -- Could be "right" if you prefer
+        width = 30,
+        side = "left",
       },
       renderer = {
         icons = {
           show = {
-            file = true, -- Show file type icons
-            folder = true, -- Show folder icons
-            folder_arrow = true, -- Show expand/collapse arrows
-            git = true, -- Show git status icons
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
           },
         },
       },
+
       filters = {
-        dotfiles = false, -- Show hidden files by default
-        -- Ignore these directories (they clutter the tree)
+        dotfiles = false, -- afficher les fichiers cachés
         custom = { "node_modules", ".git" },
       },
     })
