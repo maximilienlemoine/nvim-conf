@@ -8,6 +8,8 @@ return {
         "vimdoc",
         "javascript",
         "php",
+        "markdown",
+        "markdown_inline",
         "typescript",
         "python",
         "bash",
