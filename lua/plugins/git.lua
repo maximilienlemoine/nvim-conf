@@ -10,9 +10,6 @@ return {
     keys = {
       { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" },
       { "<leader>gc", "<cmd>Neogit commit<cr>", desc = "Neogit Commit" },
-      { "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "Diffview (changements)" },
-      { "<leader>gV", "<cmd>DiffviewClose<cr>", desc = "Diffview Close" },
-      { "<leader>gF", "<cmd>DiffviewFileHistory %<cr>", desc = "Historique du fichier" },
     },
     opts = {
       kind = "tab",
@@ -20,6 +17,35 @@ return {
         diffview = true,
         snacks = true,
       },
+    },
+  },
+
+  -- Diffview : diffs, historique et résolution de conflits
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewFileHistory", "DiffviewToggleFiles", "DiffviewRefresh" },
+    keys = {
+      { "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "Diffview (changements / conflits)" },
+      { "<leader>gV", "<cmd>DiffviewClose<cr>", desc = "Diffview Close" },
+      { "<leader>gF", "<cmd>DiffviewFileHistory %<cr>", desc = "Historique du fichier" },
+      { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Historique de la branche" },
+    },
+    opts = {
+      enhanced_diff_hl = true,
+      view = {
+        -- Pendant un merge/rebase : OURS | BASE | THEIRS en haut, résultat en bas
+        merge_tool = {
+          layout = "diff3_mixed",
+          disable_diagnostics = true,
+          winbar_info = true,
+        },
+      },
+      -- Raccourcis par défaut dans la vue de conflit :
+      --   [x / ]x            conflit précédent / suivant
+      --   <leader>co / ct    garder OURS / THEIRS
+      --   <leader>cb / ca    garder BASE / tout garder
+      --   dx                 supprimer le conflit
+      --   g<C-x>             changer de layout
     },
   },
 
