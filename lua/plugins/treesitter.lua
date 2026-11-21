@@ -1,31 +1,10 @@
+-- LazyVim (et les extras de langage) gèrent déjà highlight, indent et la plupart des parsers.
+-- On complète simplement la liste.
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
     opts = {
-      ensure_installed = {
-        "vim",
-        "vimdoc",
-        "javascript",
-        "php",
-        "markdown",
-        "markdown_inline",
-        "typescript",
-        "python",
-        "bash",
-        "html",
-        "css",
-      },
-
-      auto_install = true,
-
-      highlight = {
-        enable = true,
-      },
-
-      indent = {
-        enable = true,
-      },
+      ensure_installed = { "css", "scss", "sql" },
     },
   },
 }
